@@ -344,6 +344,32 @@
   color: var(--clay);
 }
 
+.story-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.story-copy h2 {
+  margin: 0 0 24px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.story-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.story-copy p:last-child {
+  margin-bottom: 0;
+}
+
 .life-story-note {
   display: flex;
   align-items: flex-start;

@@ -29,8 +29,8 @@ npm run dev
 
 Update page copy in the matching file under `src/pages/`. Add Georgina's preferred email or professional profile in `src/pages/ContactPage.jsx` before publishing.
 
-## Deploy to GitHub Pages
+## Deploy to Netlify
 
-The site is configured for the `markportfolio` repository. Push to `main` to
-build and deploy with GitHub Actions, then set the repository's Pages source
-to **GitHub Actions** in **Settings → Pages**.
+The `netlify.toml` file configures the build, public directory, and client-side
+route fallback. Connect the GitHub repository to Netlify to deploy on each
+push to `main`.

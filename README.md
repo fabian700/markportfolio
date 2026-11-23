@@ -32,5 +32,6 @@ Update page copy in the matching file under `src/pages/`. Add Georgina's preferr
 ## Deploy to Netlify
 
 The `netlify.toml` file configures the build, public directory, and client-side
-route fallback. Connect the GitHub repository to Netlify to deploy on each
-push to `main`.
+route fallback. The build also writes absolute Open Graph and Twitter image URLs
+so link previews can fetch the share image. Connect the GitHub repository to
+Netlify to deploy on each push to `main`.

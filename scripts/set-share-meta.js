@@ -9,17 +9,24 @@ const file = 'dist/index.html'
 const html = readFileSync(file, 'utf8')
 const ogUrlPattern = /<meta property="og:url" content="[^"]+" \/>/
 const ogImagePattern = /<meta property="og:image" content="[^"]+" \/>/
+const twitterImagePattern =
+  /<meta name="twitter:image" content="[^"]+" \/>/
 
-if (!ogUrlPattern.test(html) || !ogImagePattern.test(html)) {
-  throw new Error('Expected Open Graph URL tags in dist/index.html')
+if (
+  !ogUrlPattern.test(html) ||
+  !ogImagePattern.test(html) ||
+  !twitterImagePattern.test(html)
+) {
+  throw new Error('Expected share image and Open Graph URL tags in dist/index.html')
 }
 
 writeFileSync(
   file,
   html
     .replace(ogUrlPattern, `<meta property="og:url" content="${siteUrl.href}" />`)
+    .replace(ogImagePattern, `<meta property="og:image" content="${imageUrl.href}" />`)
     .replace(
-      ogImagePattern,
-      `<meta property="og:image" content="${imageUrl.href}" />`,
+      twitterImagePattern,
+      `<meta name="twitter:image" content="${imageUrl.href}" />`,
     ),
 )
